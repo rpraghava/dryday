@@ -1,15 +1,14 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven:3.39-jdk-8'
-      args 'sudo yum install maven'
-    }
-    
-  }
+  agent none
   stages {
     stage('init') {
       steps {
         echo 'yahoo'
+      }
+    }
+    stage('build') {
+      steps {
+        sh 'echo step'
       }
     }
   }
